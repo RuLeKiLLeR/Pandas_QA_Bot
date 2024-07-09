@@ -1,8 +1,9 @@
 import gradio as gr
-import os
+import os, sys
 import shutil
 import argparse
-from Pandas_QA_Bot.backend.main import PandasGptAgent, setup_logging
+sys.path.append(os.getcwd())
+from backend.main import PandasGptAgent, setup_logging
 
 # Argument parsing
 parser = argparse.ArgumentParser(description="A script to handle profiles project and custom prompt.")
@@ -12,7 +13,7 @@ args = parser.parse_args()
 
 setup_logging()
 
-agent_class = PandasGptAgent(api_key="sk-customergpt-dev-Otayp2OBMkZiJfRtDPilT3BlbkFJQ2u29xMhe5eT2QIKaOX4")
+agent_class = PandasGptAgent(api_key="")
 global agent
 
 
